@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Veiw Driver Details.css">
+    <link rel="icon" href="icon2.jpg" type="image/x-icon">
+    
+</head>
+
+<body>
+    <div class="top">
+        <h2>Vehicle Management Software</h2>
+        <button class="b1" onclick="document.location='dasboard.html'">Dashboard</button>
+    </div>
+    <div class="Veiw-Driver-slidebar">
+        <h2>Menu</h2>
+        <button class="Veiw-Driver-dropdown-btn1">Manage Vehicle &#9662;</button>
+        <div class="Veiw-Driver-dropdown1">
+            <div class="Veiw-Driver-d1">
+                <a href="vehicle_Info.html">Add Vehicle Info</a>
+            </div>
+
+            <div class="Veiw-Driver-d2">
+                <a href="View Vehicle Details.html">View Vehicle Info</a>
+            </div>
+        </div>
+        <button class="Veiw-Driver-dropdown-btn2">Manage DriverDetail &#9662;</button>
+        <div class="Veiw-Driver-dropdown2">
+            <div class="Veiw-Driver-d3">
+                <a href="DriverDetail.html">Add Driver Info</a>
+            </div>
+            <div class="Veiw-Driver-d4">
+                <a href="View Driver Details.html">View Driver Info</a>
+            </div>
+        </div>
+
+        <a href="#">Trip & Usage Log</a>
+        <a href="#">Fuel & Expense Log</a>
+        <a href="#">Alerts & Notifications</a>
+        <a href="#">Reports & Analytics</a>
+        <a href="#">Access & Security</a>
+    </div>
+
+
+    <div class="container">
+
+        <div class="search-container">
+            <label class="search-label"><b>Search</b></label>
+            <input type="search" class="search-box" placeholder="Enter name to search">
+        </div>
+        <table>
+            <thead>
+                <tr class="head">
+                    <th>ID</th>
+                    <th>Driver Name</th>
+                    <th>Contact Details</th>
+                    <th>License Number</th>
+                    <th>Blood group</th>
+                    <th>Employment Type</th>
+                    <th>Gender</th>
+                    <th>Assigned Vehicle</th>
+                    <th>Aadhar Details</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                   <td><button class="Delete"><b>Delete</b></i></button>
+                   
+                        <button type="Delete" class="Edit"><b>Edit</b></button>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                    <td><button type="Delete" class="Delete"><b>Delete</b></button>
+                            <button type="Delete" class="Edit"><b>Edit</b></button></td>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+
+                    <td><button type="Delete" class="Delete"><b>Delete</b></button>
+                            <button type="Delete" class="Edit"><b>Edit</b></button></td>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var searchBox = document.querySelector('.search-box');
+
+            function addDeleteFunctionality(button) {
+                button.addEventListener('click', function () {
+                    var row = button.closest('tr');
+                    var name = row.cells[1].innerText;
+                    var confirmDelete = confirm('Are you sure you want to delete the driver "' + name + '"?');
+                    if (confirmDelete) {
+                        row.remove();
+                    }
+                });
+            }
+
+            function addEditFunctionality(button) {
+                button.addEventListener('click', function () {
+                    var row = button.closest('tr');
+                    row.cells[9].innerHTML = ""; 
+
+                    for (var i = 1; i <= 8; i++) {
+                        var cell = row.cells[i];
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        input.value = cell.innerText;
+                        input.classList.add("edit-input");
+                        cell.innerHTML = "";
+                        cell.appendChild(input);
+                    }
+
+                    var saveButton = document.createElement("button");
+                    saveButton.innerText = "Save";
+                    saveButton.classList.add("save-button");
+                    row.cells[9].appendChild(saveButton);
+
+                    saveButton.addEventListener("click", function () {
+                        var inputs = row.querySelectorAll(".edit-input");
+                        inputs.forEach((input, index) => {
+                            row.cells[index + 1].innerText = input.value;
+                        });
+                        saveButton.remove();
+
+                    
+                        var actionCell = row.cells[9];
+                        actionCell.innerHTML = '<button type="button" class="Delete"><b>Delete</b></button> ' +
+                            '<button type="button" class="Edit"><b>Edit</b></button>';
+
+                    
+                        addDeleteFunctionality(actionCell.querySelector(".Delete"));
+                        addEditFunctionality(actionCell.querySelector(".Edit"));
+                    });
+                });
+            }
+
+            document.querySelectorAll('.Delete').forEach(addDeleteFunctionality);
+            document.querySelectorAll('.Edit').forEach(addEditFunctionality);
+
+            
+            searchBox.addEventListener('keyup', function () {
+                var searchValue = searchBox.value.toLowerCase();
+                var rows = document.querySelectorAll('tbody tr');
+
+                rows.forEach(function (row) {
+                    var driverName = row.cells[1].innerText.toLowerCase();
+                    row.style.display = driverName.includes(searchValue) ? '' : 'none';
+                });
+            });
+
+        
+            var dropdownButtons1 = document.querySelectorAll(".Veiw-Driver-dropdown-btn1");
+            var dropdownButtons2 = document.querySelectorAll(".Veiw-Driver-dropdown-btn2");
+
+            function toggleDropdown(button) {
+                button.addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var dropdownContent = this.nextElementSibling;
+                    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+                });
+            }
+
+            dropdownButtons1.forEach(toggleDropdown);
+            dropdownButtons2.forEach(toggleDropdown);
+        });
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const apiUrl = "https://6752f055f3754fcea7ba2a7b.mockapi.io/user";
+        const tableBody = document.querySelector("tbody");
+
+        // Fetch data from API and populate table
+        async function fetchDrivers() {
+            try {
+                const response = await fetch(apiUrl);
+                const drivers = await response.json();
+                
+                tableBody.innerHTML = ""; // Clear existing rows
+
+                drivers.forEach(driver => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${driver.id}</td>
+                        <td>${driver.name}</td>
+                        <td>${driver.contact}</td>
+                        <td>${driver.license}</td>
+                        <td>${driver.bloodGroup}</td>
+                        <td>${driver.employmentType}</td>
+                        <td>${driver.gender}</td>
+                        <td>${driver.vehicleAssigned}</td>
+                        <td>${driver.aadhar}</td>
+                        <td>
+                            <button class="Delete" data-id="${driver.id}"><b>Delete</b></button>
+                            <button class="Edit" data-id="${driver.id}"><b>Edit</b></button>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+
+                attachEventListeners();
+            } catch (error) {
+                console.error("Error fetching driver data:", error);
+            }
+        }
+
+        // Attach event listeners for delete and edit buttons
+        function attachEventListeners() {
+            document.querySelectorAll(".Delete").forEach(button => {
+                button.addEventListener("click", async function () {
+                    const driverId = this.getAttribute("data-id");
+                    if (confirm("Are you sure you want to delete this driver?")) {
+                        await deleteDriver(driverId);
+                        fetchDrivers(); // Refresh table after deletion
+                    }
+                });
+            });
+
+            document.querySelectorAll(".Edit").forEach(button => {
+                button.addEventListener("click", function () {
+                    const row = this.closest("tr");
+                    editDriver(row);
+                });
+            });
+        }
+
+        // Delete driver from API
+        async function deleteDriver(driverId) {
+            try {
+                await fetch(`${apiUrl}/${driverId}`, { method: "DELETE" });
+                alert("Driver deleted successfully!");
+            } catch (error) {
+                console.error("Error deleting driver:", error);
+            }
+        }
+
+        // Edit driver details
+        function editDriver(row) {
+            const driverId = row.querySelector(".Edit").getAttribute("data-id");
+            row.cells[9].innerHTML = ""; // Clear buttons
+
+            for (let i = 1; i <= 8; i++) {
+                const cell = row.cells[i];
+                const input = document.createElement("input");
+                input.type = "text";
+                input.value = cell.innerText;
+                cell.innerHTML = "";
+                cell.appendChild(input);
+            }
+
+            const saveButton = document.createElement("button");
+            saveButton.innerText = "Save";
+            saveButton.classList.add("save-button");
+            row.cells[9].appendChild(saveButton);
+
+            saveButton.addEventListener("click", async function () {
+                const inputs = row.querySelectorAll("input");
+                const updatedDriver = {
+                    name: inputs[0].value,
+                    contact: inputs[1].value,
+                    license: inputs[2].value,
+                    bloodGroup: inputs[3].value,
+                    employmentType: inputs[4].value,
+                    gender: inputs[5].value,
+                    vehicleAssigned: inputs[6].value,
+                    aadhar: inputs[7].value
+                };
+
+                await updateDriver(driverId, updatedDriver);
+                fetchDrivers(); // Refresh table after update
+            });
+        }
+
+        // Update driver in API
+        async function updateDriver(driverId, updatedDriver) {
+            try {
+                await fetch(`${apiUrl}/${driverId}`, {
+                    method: "PUT",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(updatedDriver)
+                });
+                alert("Driver updated successfully!");
+            } catch (error) {
+                console.error("Error updating driver:", error);
+            }
+        }
+
+        fetchDrivers(); // Initial fetch call
+    });
+</script>
+
+</body>
+
+</html>

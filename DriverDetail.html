@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="DriverDetails.css">
+    <link rel="icon" href="icon2.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="top">
+        <h2>Vehicle Management Software</h2>
+        <button class="b1" onclick="document.location='dasboard.html'">Dashboard</button>
+    </div>
+    <div class="Driver-sidebar">
+        <h2>Menu</h2>
+        <button class="Driver-dropdown-btn1">Manage Vehicle &#9662;</button>
+        <div class="Driver-dropdown1">
+            <div class="Driver-d1">
+                <a href="vehicle_Info.html">Add Vehicle Info</a>
+            </div>
+            <div class="Driver-d2">
+                <a href="View Vehicle Details.html">View Vehicle Info</a>
+            </div>
+        </div>
+
+        <button class="Driver-dropdown-btn2">Manage DriverDetail &#9662;</button>
+        <div class="Driver-dropdown1">
+            <div class="Driver-d3">
+                <a href="DriverDetail.html">Add Driver Info</a>
+            </div>
+            <div class="Driver-d4">
+                <a href="View Driver Details.html">View Driver Info</a>
+            </div>
+        </div>
+
+        <a href="#">Trip & Usage Log</a>
+        <a href="#">Fuel & Expense Log</a>
+        <a href="#">Alerts & Notifications</a>
+        <a href="#">Reports & Analytics</a>
+        <a href="#">Access & Security</a>
+    </div>
+
+    <div>
+        <h2 class="tagName">Driver Details</h2>
+        <div class="container">
+            <div>
+                <label><b>Driver ID</b> </label>
+                <input type="text" placeholder="Enter Driver ID" class="driver-id-input">
+            </div>
+            <div>
+                <label><b>Driver Name </b> </label>
+                <input type="text" placeholder="Enter Driver Name" class="driver-name-input">
+            </div>
+            <div>
+                <label><b>Date Of Birth </b> </label>
+                <input type="date" placeholder="Enter Date of Birth" class="dob-input">
+            </div>
+             <div>
+                <label><b>Gender</b> </label>
+                <select class="gender-input" id="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Transgender">Transgender</option>
+                </select>
+
+            </div>
+            <div>
+                <label><b>Address </b> </label>
+                <input type="text" placeholder="Enter Address  " class="address-input">
+            </div>
+            <div>
+                <label><b>Contact Details </b> </label>
+                <input type="text" placeholder="Enter Contact Detail" class="contact-details-input">
+            </div>
+            <div>
+                <label><b>Aadhar Details </b> </label>
+                <input type="number" placeholder="Enter Aadhar Detail" class="aadhar-details-input">
+            </div>
+            <div>
+                <label><b>Blood Group </b> </label>
+                <select class="blood-group-input" id="bg" required>
+                    <option value="O+ve">O+ve</option>
+                    <option value="B+ve">B+ve</option>
+                    <option value="AB-ve">AB-ve</option>
+                    <option value="AB+ve">AB+ve</option>
+                </select>
+
+            </div>
+        </div>
+
+
+        <div>
+            <h2 style="margin-left: 260px;">Emergency Contact</h2>
+            <div class="container">
+
+                <div>
+                    <label><b> Name</b> </label>
+                    <input type="text" placeholder="Enter name of Relative" class="Relative-contact-name">
+
+                </div>
+                <div>
+                    <label><b>Relation </b> </label>
+                    <input type="text" placeholder="Enter Relation for Driver " class="contact-relation-input">
+                </div>
+                <div>
+                    <label><b>Relative Contact </b> </label>
+                    <input type="number" placeholder="Enter Relative Contact" class="contact-relative-contact-input">
+                </div>
+                <div>
+                    <label><b>Address </b> </label>
+                    <input type="text" placeholder="Enter Relative Address" class="emergency-contact-address-input">
+                </div>
+            </div>
+
+
+            <div>
+                <h2 style="margin-left: 260px;">Driver License Details</h2>
+                <div class="container">
+                    <div>
+                        <label><b>License Number </b> </label>
+                        <input type="text" placeholder="Enter License Number" class="license-number-input">
+                    </div>
+                    <div>
+                        <label><b> Issue Date </b> </label>
+                        <input type="date" placeholder="Enter Date of issue" class="license-issue-date-input">
+                    </div>
+                    <div>
+                        <label><b> Expiry Date </b> </label>
+                        <input type="date" placeholder="Enter Date of Expiry" class="license-expiry-date-input">
+                    </div>
+                      <div>
+                        <label><b>Type of License </b> </label><br>
+                        <form action="/action_page.php">
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"
+                                class="license-type-checkbox">
+                            <label for="vehicle1"> MCWG</label><br>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car"
+                                class="license-type-checkbox">
+                            <label for="vehicle2"> LMV</label><br>
+                            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat"
+                                class="license-type-checkbox">
+                            <label for="vehicle3"> HMV</label><br><br>
+                        </form>
+                    </div>
+                    <div>
+                        <label><b>Issuing Authority </b> </label>
+                        <input type="text" placeholder="Enter Rto office" class="issuing-authority-input">
+                    </div>
+                    <div>
+                        <label><b>License document</b> </label>
+                        <input type="file" placeholder="uplode Scanned copy of License" class="license-document-input">
+                    </div>
+                </div>
+                <div>
+                    <h2 style="margin-left: 260px;">Employment Details</h2>
+                    <div class="container">
+                        <div>
+                            <label><b>Employment type </b> </label>
+                            <select class="emptype" id="Fuel">
+                                <option value="Full Time">Full Time</option>
+                                <option value="Part Time">Part Time</option>
+                                <option value="Contract">Contract</option>
+                            </select>
+
+
+                        </div>
+                        <div>
+                            <label><b>Joined Date </b> </label>
+                            <input type="date" placeholder="Enter Date of Joining" class="joined-date-input">
+                        </div>
+                        <div>
+                            <label><b>Assigned Vehicle </b> </label>
+                            <input type="text" placeholder="Enter Vehicle ID" class="assigned-vehicle-input">
+                        </div>
+                    </div>
+
+
+                    
+                        <button type="submit" class="Dsubmit" onclick="submitData()"><b>SUBMIT</b></button>
+                    
+
+
+
+                    <div class="popup" id="popup">
+                        <img src="check.png">
+                        <h2>Thank you</h2>
+                        <p>Your details has been successfully submitted. Thanks!</p>
+                        <button type="button" onclick="closepopup()">OK</button>
+                    </div>
+
+                    <script>
+
+                        let popup = document.getElementById("popup");
+
+                        function openpopup() {
+                            popup.classList.add("open-popup");
+                        }
+
+                        function closepopup() {
+                            popup.classList.remove("open-popup");
+                        }
+                    </script>
+                    <script>
+
+                        var dropdown = document.querySelectorAll(".Driver-dropdown-btn1");
+
+                        dropdown.forEach(button => {
+                            button.addEventListener("click", function () {
+                                this.classList.toggle("active");
+                                var dropdownContent = this.nextElementSibling;
+                                if (dropdownContent.style.display === "block") {
+                                    dropdownContent.style.display = "none";
+                                } else {
+                                    dropdownContent.style.display = "block";
+                                }
+                            });
+                        });
+                    </script>
+                    <script>
+
+                        var dropdown = document.querySelectorAll(".Driver-dropdown-btn2");
+
+                        dropdown.forEach(button => {
+                            button.addEventListener("click", function () {
+                                this.classList.toggle("active");
+                                var dropdownContent = this.nextElementSibling;
+                                if (dropdownContent.style.display === "block") {
+                                    dropdownContent.style.display = "none";
+                                } else {
+                                    dropdownContent.style.display = "block";
+                                }
+                            });
+                        });
+                    </script>
+
+                  <script>
+
+                    function submitData() {
+                    let driverData = {
+                    driverID: document.querySelector(".driver-id-input").value,
+                    name: document.querySelector(".driver-name-input").value,
+                    dob: document.querySelector(".dob-input").value,
+                    gender: document.querySelector(".gender-input").value,
+                    address: document.querySelector(".address-input").value,
+                    contact: document.querySelector(".contact-details-input").value,
+                    aadhar: document.querySelector(".aadhar-details-input").value,
+                    bloodGroup: document.querySelector(".blood-group-input").value,
+                    licenseNumber: document.querySelector(".license-number-input").value,
+                    licenseIssueDate: document.querySelector(".license-issue-date-input").value,
+                    licenseExpiryDate: document.querySelector(".license-expiry-date-input").value,
+                    issuingAuthority: document.querySelector(".issuing-authority-input").value,
+                    employmentType: document.querySelector(".emptype").value,
+                    joinedDate: document.querySelector(".joined-date-input").value,
+                    assignedVehicle: document.querySelector(".assigned-vehicle-input").value
+                    };
+
+                    fetch("https://6752f055f3754fcea7ba2a7b.mockapi.io/user", {
+                    method: "POST",
+                    headers: {
+                    "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(driverData),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                    console.log("Success:", data);
+                    openpopup();
+                    })
+                    .catch(error => {
+                    console.error("Error:", error);
+                    alert("Error submitting data!");
+                    });
+                    }
+                    </script>
+</body>
+
+</html>

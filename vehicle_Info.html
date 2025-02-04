@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="vehicle_info.css">
+    <link rel="icon" href="icon2.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="top">
+        <h2>Vehicle Management Software</h2>
+        <button class="b1" onclick="document.location='dasboard.html'">Dashboard</button>
+    </div>
+    <div class="Vehicle-sidebar">
+        <h2>Menu</h2>
+        <button class="Vehicle-dropdown-btn1">Manage Vehicle &#9662;</button>
+        <div class="Vehicle-dropdown1">
+            <div class="Vehicle-d1">
+                <a href="vehicle_Info.html">Add Vehicle Info</a>
+            </div>
+            <div class="Vehicle-d2">
+                <a href="View Vehicle Details.html">View Vehicle Info</a>
+            </div>
+        </div>
+
+        <button class="Vehicle-dropdown-btn2">Manage DriverDetail &#9662;</button>
+        <div class="Vehicle-dropdown2">
+            <div class="Vehicle-d1">
+                <a href="DriverDetail.html">Add Driver Info</a>
+            </div>
+            <div class="Vehicle-d2">
+                <a href="View Driver Details.html">View Driver Info</a>
+            </div>
+        </div>
+
+        <a href="#">Trip & Usage Log</a>
+        <a href="#">Fuel & Expense Log</a>
+        <a href="#">Alerts & Notifications</a>
+        <a href="#">Reports & Analytics</a>
+        <a href="#">Access & Security</a>
+    </div>
+
+    <div>
+        <h2 class="tagName">Vehicle Details</h2>
+        <div class="container">
+
+            <div>
+                <label><b>Vehicle ID </b> </label>
+                <input type="text" placeholder="Enter Vehicle ID" class="vehicle-id-input" required
+                    pattern="[A-Za-z0-9]{4,10}">
+
+            </div>
+            <div>
+                <label><b>Regiteration Number </b> </label>
+                <input type="text" placeholder="Enter Vehicle Registration Number" class="vehicle-reg-number-input"
+                    title="Format: TN01AB1234">
+            </div>
+            <div>
+                <label><b>Vehicle Type </b> </label>
+                <input type="text" placeholder="Enter Vehicle Type" class="vehicle-type-input" required>
+            </div>
+            <div>
+                <label><b>Manufacture Year </b> </label>
+                <input type="text" placeholder="Enter Vehicle year of Manufacture"
+                    class="vehicle-manufacture-year-input" required min="1900" max="2025">
+            </div>
+            <div>
+                <label><b>Make </b> </label>
+                <input type="text" placeholder="Enter make details " class="vehicle-make-input" required>
+            </div>
+            <div>
+                <label><b>Model </b> </label>
+                <input type="text" placeholder="Enter Vehicle model" class="vehicle-model-input" required>
+            </div>
+            <div>
+                <label><b>Color </b> </label>
+                <input type="color" value="#6eaae2" placeholder="Enter Vehicle color" class="vehicle-color-input" required>
+            </div>
+            <div>
+                <label><b>Body Type </b> </label>
+                <input type="text" placeholder="Enter Vehicle body type" class="vehicle-body-type-input" required>
+            </div>
+        </div>
+
+
+        <div>
+            <h2 style="margin-left: 260px;">Owner Details</h2>
+            <div class="container">
+                <div>
+                    <label><b>Owner Name</b> </label>
+                    <input type="text" placeholder="Enter name of Owner" class="owner-name-input" required
+                        pattern="[A-Za-z ]">
+
+                </div>
+                <div>
+                    <label><b>Purchase date </b> </label>
+                    <input type="date" placeholder="Enter Vehicle purchase " class="purchase-date-input" required>
+                </div>
+                <div>
+                    <label><b>Price</b> </label>
+                    <input type="number" placeholder="Enter Vehicle price" class="vehicle-price-input" required
+                        min="10000">
+                </div>
+                <div>
+                    <label><b>Purchase Invoice </b> </label>
+                    <input type="file" placeholder="uplode invoice" class="purchase-invoice-input" required>
+                </div>
+            </div>
+
+
+            <div>
+                <h2 style="margin-left: 260px;">Registeration Details</h2>
+                <div class="container">
+                    <div>
+                        <label><b>Registeration Date </b> </label>
+                        <input type="date" placeholder="Enter Vehicle Date of Registeration"
+                            class="registration-date-input" required>
+                    </div>
+                    <div>
+                        <label><b>Expiry Date </b> </label>
+                        <input type="date" placeholder="Enter Vehicle Registeration Expiry Date"
+                            class="expiry-date-input" required>
+                    </div>
+                    <div>
+                        <label><b>Registeration Place </b> </label>
+                        <input type="text" placeholder="Enter Vehicle place of Registeration"
+                            class="registration-place-input" required>
+                    </div>
+                    <div>
+                        <label><b>Road Tax Date </b> </label>
+                        <input type="date" placeholder="Enter date of payment" class="road-tax-date-input" required>
+                    </div>
+                    <div>
+                        <label><b>Renewal date </b> </label>
+                        <input type="date" placeholder="Enter Renewal date" class="renewal-date-input" required>
+                    </div>
+                    <div>
+                        <label><b>Pollution Certificate </b> </label>
+                        <input type="file" placeholder="uplode PUC certificate" class="pollution-certificate-input">
+                    </div>
+                </div>
+
+                <div>
+                    <h2 style="margin-left: 260px;">Maintenance Details</h2>
+                    <div class="container">
+
+                        <div>
+                            <label><b>Last Service Date </b> </label>
+                            <input type="date" placeholder="Enter Vehicle Last Service Date "
+                                class="last-service-date-input">
+                        </div>
+                        <div>
+                            <label><b>Next Service Date </b> </label>
+                            <input type="date" placeholder="Enter Vehicle Next Service Date "
+                                class="next-service-date-input">
+                        </div>
+                        <div>
+                            <label><b>Odometer Reading </b> </label>
+                            <input type="number" placeholder="Enter Vehicle Odometer Reading"
+                                class="odometer-reading-input">
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 style="margin-left: 260px;">Fuel and Efficiency Tracking</h2>
+                        <div class="container">
+                            <div style="height: 80px; margin-top: 0px;">
+                                <label class="Fuel" style=" font-size: 18px;"><b>FuelType :</b> </label>
+                                <select class="Fueltype" id="Fuel" required>
+                                    <option value="Petrol">Petrol</option>
+                                    <option value="Diesel">Diesel</option>
+                                    <option value="CNG">CNG</option>
+                                    <option value="EV">EV</option>
+
+
+                                </select>
+
+                            </div>
+                            <div>
+                                <label><b>Fuel Capacity </b> </label>
+                                <input type="number" placeholder="Enter Vehicle Fuel Capacity"
+                                    class="fuel-capacity-input">
+                            </div>
+                            <div style="padding-left: 10px;">
+                                <label style="padding-left: 10px;"><b>Average mileage :</b> </label>
+                                <input type="number" placeholder="Enter Vehicle  mileage" class="average-mileage-input">
+                            </div>
+                        </div>
+
+
+
+                        <button type="submit" class="Vsubmit" onclick="openpopup()"><b>SUBMIT</b></button>
+
+                    </div>
+                    <div class="popup" id="popup">
+                        <img src="check.png">
+                        <h2>Thank you</h2>
+                        <p>Your details has been successfully submitted. Thanks!</p>
+                        <button type="button" onclick="closepopup()">OK</button>
+                    </div>
+
+
+
+
+                    <script>
+                        let popup = document.getElementById("popup");
+                        function openpopup() {
+                            popup.classList.add("open-popup");
+
+                        }
+
+                        function closepopup() {
+                            popup.classList.remove("open-popup");
+
+                        }
+                    </script>
+                    <script>
+
+                        var dropdown = document.querySelectorAll(".Vehicle-dropdown-btn1");
+
+                        dropdown.forEach(button => {
+                            button.addEventListener("click", function () {
+                                this.classList.toggle("active");
+                                var dropdownContent = this.nextElementSibling;
+                                if (dropdownContent.style.display === "block") {
+                                    dropdownContent.style.display = "none";
+                                } else {
+                                    dropdownContent.style.display = "block";
+                                }
+                            });
+                        });
+                    </script>
+                    <script>
+
+                        var dropdown = document.querySelectorAll(".Vehicle-dropdown-btn2");
+
+                        dropdown.forEach(button => {
+                            button.addEventListener("click", function () {
+                                this.classList.toggle("active");
+                                var dropdownContent = this.nextElementSibling;
+                                if (dropdownContent.style.display === "block") {
+                                    dropdownContent.style.display = "none";
+                                } else {
+                                    dropdownContent.style.display = "block";
+                                }
+                            });
+                        });
+                    </script>
+
+
+
+
+
+
+                    <script>
+                        document.querySelector(".Vsubmit").addEventListener("click", function (event) {
+                            event.preventDefault(); // Prevent the default form submission
+
+                            // Collect form data
+                            const vehicleData = {
+                                vehicleID: document.querySelector(".vehicle-id-input").value.trim(),
+                                registrationNumber: document.querySelector(".vehicle-reg-number-input").value.trim(),
+                                vehicleType: document.querySelector(".vehicle-type-input").value.trim(),
+                                manufactureYear: document.querySelector(".vehicle-manufacture-year-input").value.trim(),
+                                make: document.querySelector(".vehicle-make-input").value.trim(),
+                                model: document.querySelector(".vehicle-model-input").value.trim(),
+                                color: document.querySelector(".vehicle-color-input").value.trim(),
+                                bodyType: document.querySelector(".vehicle-body-type-input").value.trim(),
+                                ownerName: document.querySelector(".owner-name-input").value.trim(),
+                                purchaseDate: document.querySelector(".purchase-date-input").value.trim(),
+                                price: document.querySelector(".vehicle-price-input").value.trim(),
+                                registrationDate: document.querySelector(".registration-date-input").value.trim(),
+                                expiryDate: document.querySelector(".expiry-date-input").value.trim(),
+                                registrationPlace: document.querySelector(".registration-place-input").value.trim(),
+                                roadTaxDate: document.querySelector(".road-tax-date-input").value.trim(),
+                                renewalDate: document.querySelector(".renewal-date-input").value.trim(),
+                                lastServiceDate: document.querySelector(".last-service-date-input").value.trim(),
+                                nextServiceDate: document.querySelector(".next-service-date-input").value.trim(),
+                                odometerReading: document.querySelector(".odometer-reading-input").value.trim(),
+                                fuelType: document.querySelector(".Fueltype").value.trim(),
+                                fuelCapacity: document.querySelector(".fuel-capacity-input").value.trim(),
+                                averageMileage: document.querySelector(".average-mileage-input").value.trim(),
+                            };
+
+
+
+                            // Send data to the API
+                            fetch("https://6752f055f3754fcea7ba2a7b.mockapi.io/user", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify(vehicleData)
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log("Success:", data);
+                                    alert("Vehicle details submitted successfully!");
+                                })
+                                .catch(error => {
+                                    console.error("Error:", error);
+                                    alert("An error occurred while submitting the data.");
+                                });
+                        });
+
+                    </script>
+</body>
+
+</html>

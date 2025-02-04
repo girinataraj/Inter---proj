@@ -1,0 +1,305 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+.b1 {
+  width: 100px;
+  color: rgb(255, 255, 255);
+  margin: 0px;
+  margin-left: 60%;
+  padding: 5px;
+  background-color:  #343a40;
+  border: 1px  #343a40;
+  cursor: pointer;
+
+}
+
+.b1:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.top {
+  background-color: #343a40;
+  color: white;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.top h2 {
+  margin: 0;
+  display: inline;
+}
+
+.Veiw-vehicle-slidebar {
+  width: 250px;
+  background-color: #495057;
+  color: white;
+  position: fixed;
+  top: 60px;
+  height: calc(100% - 60px);
+  overflow-y: auto;
+  padding-top: 10px;
+  transition: all 0.3s;
+}
+
+.Veiw-vehicle-slidebar h2 {
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid #6c757d;
+}
+
+.Veiw-vehicle-slidebar a {
+  display: block;
+  padding: 10px 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.Veiw-vehicle-slidebar a:hover {
+  background-color: #6c757d;
+}
+
+.Veiw-vehicle-dropdown-btn1 {
+  background-color: #495057;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+}
+
+.Veiw-vehicle-dropdown-btn1:hover {
+  background-color: #6c757d;
+}
+
+
+.Veiw-vehicle-dropdown-btn2 {
+  background-color: #495057;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+}
+
+.Veiw-vehicle-dropdown-btn2:hover {
+  background-color: #6c757d;
+}
+
+
+.Veiw-vehicle-dropdown1 {
+  display: none;
+  background-color: #495057;
+  padding-left: 0px;
+
+}
+
+.Veiw-vehicle-d1 {
+  padding-left: 20px;
+  width: 100%;
+}
+
+.Veiw-vehicle-d1:hover {
+  background-color: #6c757d;
+}
+
+.Veiw-vehicle-dropdown1 a {
+  font-size: 14px;
+}
+
+.Veiw-vehicle-dropdown2 {
+  display: none;
+  background-color: #495057;
+  padding-left: 0px;
+
+}
+.Veiw-vehicle-dropdown2 a {
+  font-size: 14px;
+}
+
+.Veiw-vehicle-d2 {
+  padding-left: 20px;
+  width: 100%;
+}
+
+.Veiw-vehicle-d2:hover {
+  background-color: #6c757d;
+
+}
+.Veiw-vehicle-d3 {
+  padding-left: 20px;
+  width: 100%;
+}
+
+.Veiw-vehicle-d3:hover {
+  background-color: #6c757d;
+}
+
+
+
+.Veiw-vehicle-d4 {
+  padding-left: 20px;
+  width: 100%;
+}
+
+.Veiw-vehicle-d4:hover {
+  background-color: #6c757d;
+}
+
+
+
+.container {
+  margin-left: 270px;
+  padding: 80px 20px;
+  transition: all 0.3s;
+}
+
+.search-container {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-label {
+  font-size: 18px;
+}
+
+.search-box {
+  flex: 1;
+  font-size: 16px;
+  padding: 10px;
+  border: 2px solid #ced4da;
+  border-radius: 5px;
+}
+
+table {
+  width: 1400px;
+  height: 200px;
+  
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead th {
+  background-color: #343a40;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8f9fa;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e9ecef;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+  
+  
+}
+
+th {
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+td {
+  font-size: 14px;
+  
+}
+
+tbody tr:hover {
+  background-color: #dee2e6;
+}
+
+.Delete {
+  background-color: #343a40;
+  color: #fff;
+}
+
+.Delete:hover {
+  background-color: white;
+  color:  #343a40;
+}
+
+.Edit {
+  background-color: blue;
+  color: white;
+}
+
+.Edit:hover {
+  background-color: white;
+  color: blue;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .container {
+    margin-left: 220px;
+  }
+
+  .search-box {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .sidebar {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+
+  .container {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .search-box {
+    font-size: 14px;
+  }
+}
+.save-button{
+  background-color: rgb(45, 135, 45);
+  color: white;
+  width: 100px;
+  height: 30px;
+  
+  font-weight: bold;
+  font-size: large;
+  
+}
+
+.save-button:hover{
+  background-color: white;
+  color:  rgb(45, 135, 45);
+}
+input{
+  width:120px;
+  height: 20px;
+}

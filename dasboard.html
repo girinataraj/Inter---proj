@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="icon" href="icon2.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <div class="top">
+        <h2>Vehicle Management Software</h2>
+    </div>
+    <div class="das-sidebar">
+        <h2>Menu</h2>
+        <button class="das-dropdown-btn1">Manage Vehicle &#9662;</button>
+        <div class="das-dropdown1">
+            <div class="das-d1">
+                <a href="vehicle_Info.html">Add Vehicle Info</a>
+            </div>
+            <div class="das-d2">
+                <a href="View Vehicle Details.html" >View Vehicle Info</a>
+            </div>
+        </div>
+
+        <button class="das-dropdown-btn2">Manage DriverDetail &#9662;</button>
+        <div class="das-dropdown2">
+            <div class="das-d3">
+                <a href="DriverDetail.html">Add Driver Info</a>
+            </div>
+            <div class="das-d4">
+                <a href="View Driver Details.html" >View Driver Info</a>
+            </div>
+        </div>
+
+        <a href="#">Trip & Usage Log</a>
+        <a href="#">Fuel & Expense Log</a>
+        <a href="#">Alerts & Notifications</a>
+        <a href="#">Reports & Analytics</a>
+        <a href="#">Access & Security</a>
+    </div>
+    <img src="sakthi.jpg" alt="sakthi infra tex">
+    <script>
+        
+        var dropdown = document.querySelectorAll(".das-dropdown-btn1");
+
+        dropdown.forEach(button => {
+            button.addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        });
+    </script>
+    <script>
+        // Get all dropdown buttons
+        var dropdown = document.querySelectorAll(".das-dropdown-btn2");
+
+        dropdown.forEach(button => {
+            button.addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

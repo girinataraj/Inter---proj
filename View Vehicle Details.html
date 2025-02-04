@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="Veiw Vehicle Details.css">
+    <link rel="icon" href="icon2.jpg" type="image/x-icon">
+    
+</head>
+
+<body>
+    <div class="top">
+        <h2>Vehicle Management Software</h2>
+        <button class="b1" onclick="document.location='dasboard.html'">Dashboard</button>
+    </div>
+    <div class="Veiw-vehicle-slidebar">
+        <h2>Menu</h2>
+        <button class="Veiw-vehicle-dropdown-btn1">Manage Vehicle &#9662;</button>
+        <div class="Veiw-vehicle-dropdown1">
+            <div class="Veiw-vehicle-d1">
+                <a href="vehicle_Info.html">Add Vehicle Info</a>
+            </div>
+            <div class="Veiw-vehicle-d2">
+                <a href="View Vehicle Details.html">View Vehicle Info</a>
+            </div>
+        </div>
+
+        <button class="Veiw-vehicle-dropdown-btn2">Manage DriverDetail &#9662;</button>
+        <div class="Veiw-vehicle-dropdown2">
+            <div class="Veiw-vehicle-d3">
+                <a href="DriverDetail.html">Add Driver Info</a>
+            </div>
+            <div class="Veiw-vehicle-d4">
+                <a href="View Driver Details.html">View Driver Info</a>
+            </div>
+        </div>
+
+        <a href="#">Trip & Usage Log</a>
+        <a href="#">Fuel & Expense Log</a>
+        <a href="#">Alerts & Notifications</a>
+        <a href="#">Reports & Analytics</a>
+        <a href="#">Access & Security</a>
+    </div>
+
+
+    <div class="container">
+
+        <div class="search-container">
+            <label class="search-label"><b>Search</b></label>
+            <input type="search" class="search-box" placeholder="Enter name to search">
+        </div>
+        <table>
+            <thead>
+                <tr class="head">
+                    <th>ID</th>
+                    <th>Vehicle Name</th>
+                    <th>Body Type</th>
+                    <th>Fuel Type</th>
+                    <th>Registration Number</th>
+                    <th>Insurance Expiry Date</th>
+                    <th>Service Date</th>
+                    <th>PUC Renewal Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>v21</td>
+                    <td>Bolero Pickup</td>
+                    <td>HMV</td>
+                    <td>Diesel</td>
+                    <td>tn33bb2345</td>
+                    <td>12/12/2026</td>
+                    <td>23/3/2025</td>
+                    <td>27/5/2027</td>
+                    <td><button type="Delete" class="Delete"><b>Delete</b></button>
+                            <button type="Delete" class="Edit"><b>Edit</b></button></td>
+
+
+                </tr>
+
+                <tr>
+                    <td>v11</td>
+                    <td>kia</td>
+                    <td>LMV</td>
+                    <td>Diesel</td>
+                    <td>tn33bb2235</td>
+                    <td>1/7/2026</td>
+                    <td>2/8/2025</td>
+                    <td>18/2/2027</td>
+                    <td><button type="Delete" class="Delete"><b>Delete</b></button>
+                        <button type="Delete" class="Edit"><b>Edit</b></button>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>v35</td>
+                    <td>eicher</td>
+                    <td>HMV</td>
+                    <td>Diesel</td>
+                    <td>tn49bb2298</td>
+                    <td>4/6/2026</td>
+                    <td>7/11/2025</td>
+                    <td>28/4/2027</td>
+                    <td><button type="Delete" class="Delete"><b>Delete</b></button>
+                        <button type="Delete" class="Edit"><b>Edit</b></button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var searchBox = document.querySelector('.search-box');
+
+            function addDeleteFunctionality(button) {
+                button.addEventListener('click', function () {
+                    var row = button.closest('tr');
+                    var name = row.cells[1].innerText;
+                    var confirmDelete = confirm('Are you sure you want to delete the vehicle "' + name + '"?');
+                    if (confirmDelete) {
+                        row.remove();
+                    }
+                });
+            }
+
+            function addEditFunctionality(button) {
+                button.addEventListener('click', function () {
+                    var row = button.closest('tr');
+                    row.cells[8].innerHTML = "";
+
+                    for (var i = 1; i <= 7; i++) {
+                        var cell = row.cells[i];
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        input.value = cell.innerText;
+                        input.classList.add("edit-input");
+                        cell.innerHTML = "";
+                        cell.appendChild(input);
+                    }
+
+                    var saveButton = document.createElement("button");
+                    saveButton.innerText = "Save";
+                    saveButton.classList.add("save-button");
+                    row.cells[8].appendChild(saveButton);
+
+                    saveButton.addEventListener("click", function () {
+                        var inputs = row.querySelectorAll(".edit-input");
+                        inputs.forEach((input, index) => {
+                            row.cells[index + 1].innerText = input.value;
+                        });
+                        saveButton.remove();
+
+                        var actionCell = row.cells[8];
+                        actionCell.innerHTML = '<button type="button" class="Delete"><b>Delete</b></button> ' +
+                            '<button type="button" class="Edit"><b>Edit</b></button>';
+
+                        addDeleteFunctionality(actionCell.querySelector(".Delete"));
+                        addEditFunctionality(actionCell.querySelector(".Edit"));
+                    });
+                });
+            }
+
+            document.querySelectorAll('.Delete').forEach(addDeleteFunctionality);
+            document.querySelectorAll('.Edit').forEach(addEditFunctionality);
+
+            searchBox.addEventListener('keyup', function () {
+                var searchValue = searchBox.value.toLowerCase();
+                var rows = document.querySelectorAll('tbody tr');
+
+                rows.forEach(function (row) {
+                    var vehicleName = row.cells[1].innerText.toLowerCase();
+                    row.style.display = vehicleName.includes(searchValue) ? '' : 'none';
+                });
+            });
+
+            var dropdownButtons1 = document.querySelectorAll(".Veiw-vehicle-dropdown-btn1");
+            var dropdownButtons2 = document.querySelectorAll(".Veiw-vehicle-dropdown-btn2");
+
+            function toggleDropdown(button) {
+                button.addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var dropdownContent = this.nextElementSibling;
+                    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
+                });
+            }
+
+            dropdownButtons1.forEach(toggleDropdown);
+            dropdownButtons2.forEach(toggleDropdown);
+        });
+         </script>
+
+
+</body>
+
+</html>
